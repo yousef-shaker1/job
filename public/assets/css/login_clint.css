@@ -1,0 +1,75 @@
+.image-preview {
+    width: 100px; /* يمكنك تغيير الحجم حسب الحاجة */
+    height: 100px; /* يمكنك تغيير الحجم حسب الحاجة */
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #ddd; /* يمكنك تعديل اللون حسب التصميم */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iti { 
+width: 100%; /* تأكد من ملء العرض الكامل للحقل */
+}
+
+.image-preview img {
+    width: 100%;
+    height: auto;
+}
+.form-container {
+    background-color: #f9f9f9; /* لون خلفية فاتح */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+ .form-control {
+    white-space: nowrap; /* منع النص من الانتقال إلى سطر جديد */
+    overflow: hidden; /* إخفاء النص الذي يتجاوز عرض العنصر */
+    text-overflow: ellipsis; /* إضافة نقاط (...) إذا كان النص طويلاً */
+}
+
+.form-control option {
+    white-space: normal; /* يسمح للنص بالتدفق إلى سطور جديدة داخل القائمة */
+}
+.btn {
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #70767c;
+    border-color: #6c757d;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.progress {
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+}
+
