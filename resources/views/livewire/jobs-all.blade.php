@@ -19,105 +19,100 @@
             <div class="row">
                 <div class="col-lg-3">
                     <!-- Left content -->
-                    <div class="col-xl-3 col-lg-3 col-md-4">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="small-section-tittle2 mb-45 d-flex align-items-center">
-                                    <div class="icon d-flex align-items-center mr-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="12px">
-                                            <path fill-rule="evenodd" fill="rgb(27, 207, 107)"
-                                                d="M7.778,12.000 L12.222,12.000 L12.222,10.000 L7.778,10.000 L7.778,12.000 ZM-0.000,-0.000 L-0.000,2.000 L20.000,2.000 L20.000,-0.000 L-0.000,-0.000 ZM3.333,7.000 L16.667,7.000 L16.667,5.000 L3.333,5.000 L3.333,7.000 Z"/>
-                                        </svg>
-                                    </div>
-                                    <h4 class="font-weight-bold mb-0">Filter Jobs</h4>
-                                </div>
+                    <div class="job-filter">
+                        <!-- Filter Header -->
+                        <div class="small-section-tittle2 mb-45 d-flex align-items-center">
+                            <div class="icon d-flex align-items-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="12px">
+                                    <path fill-rule="evenodd" fill="rgb(27, 207, 107)"
+                                        d="M7.778,12.000 L12.222,12.000 L12.222,10.000 L7.778,10.000 L7.778,12.000 ZM-0.000,-0.000 L-0.000,2.000 L20.000,2.000 L20.000,-0.000 L-0.000,-0.000 ZM3.333,7.000 L16.667,7.000 L16.667,5.000 L3.333,5.000 L3.333,7.000 Z"/>
+                                </svg>
                             </div>
+                            <h4 class="font-weight-bold mb-0">Filter Jobs</h4>
                         </div>
+                
+                        <!-- Filter Form -->
                         <form wire:submit.prevent="save">
                             @csrf
-                            <div class="col-lg-4"> <!-- تعديل العرض ليكون أوسع -->
-                                <!-- Sidebar -->
-                                <div class="job-category-listing mb-50 p-3 rounded shadow-sm bg-white"> <!-- خلفية بيضاء مع ظل خفيف -->
-                                    <!-- Job Category Section -->
-                                    <div class="single-listing mb-4">
-                                        <h5 class="text-muted mb-2"><i class="fas fa-briefcase mr-2"></i>Job Category</h5>
-                                        <select class="form-control" wire:model.live="section_id">
-                                          <option value="">All Categories</option>
-                                          @foreach($sections as $section)
-                                              <option value="{{ $section->id }}">{{ $section->name }}</option>
-                                          @endforeach
-                                      </select>          
-                                    </div>
-                                    <br><br>
-                                    <!-- Job Type Section -->
-                                    <div class="single-listing mb-4">
-                                        <h5 class="text-muted mb-3"><i class="fas fa-clock mr-2"></i>Job Type</h5>
-                                        @foreach(['full_time', 'part_time', 'remote', 'contract', 'temporary', 'training', 'Fresh-graduate'] as $type)
-                                            <label class="d-block">
-                                                <input type="checkbox" class="mr-2" wire:model="job_types" value="{{ $type }}"> {{ $type }}
-                                            </label>
+                            <div class="job-category-listing mb-50 p-3 rounded shadow-sm bg-white">
+                                <!-- Job Category Section -->
+                                <div class="single-listing mb-4">
+                                    <h5 class="text-muted mb-2"><i class="fas fa-briefcase mr-2"></i>Job Category</h5>
+                                    <select class="form-control" wire:model="section_id">
+                                        <option value="">All Categories</option>
+                                        @foreach($sections as $section)
+                                            <option value="{{ $section->id }}">{{ $section->name }}</option>
                                         @endforeach
-                                    </div>
-
-                                    <!-- Job Location Section -->
-                                    <div class="single-listing mb-4">
-                                        <h5 class="text-muted mb-3"><i class="fas fa-map-marker-alt mr-2"></i>Job Location</h5>
-                                        <select class="form-control"  wire:model.live="company_location">
-                                            <option value="" selected>Anywhere</option>
-                                            <option value="usa">United States</option>
-                                            <option value="canada">Canada</option>
-                                            <option value="egypt">Egypt</option>
-                                            <option value="germany">Germany</option>
-                                            <option value="france">France</option>
-                                            <option value="japan">Japan</option>
-                                            <option value="australia">Australia</option>
-                                            <option value="switzerland">Switzerland</option>
-                                            <option value="singapore">Singapore</option>
-                                            <option value="netherlands">Netherlands</option>
-                                            <option value="sweden">Sweden</option>
-                                            <option value="norway">Norway</option>
-                                            <option value="finland">Finland</option>
-                                            <option value="denmark">Denmark</option>
-                                            <option value="south_korea">South Korea</option>
-                                            <option value="hong_kong">Hong Kong</option>
-                                            <option value="new_zealand">New Zealand</option>
-                                            <option value="austria">Austria</option>
-                                            <option value="ireland">Ireland</option>
-                                            <option value="luxembourg">Luxembourg</option>
-                                        </select>
-                                    </div>
-                                    <br><br>
-                                    <!-- Experience Section -->
-                                    <div class="single-listing mb-4">
-                                        <h5 class="text-muted mb-3"><i class="fas fa-briefcase mr-2"></i>Experience</h5>
-                                        @foreach( ['0-1', '1-3', '3-5', '5-10', '10+'] as $type)
+                                    </select>
+                                </div>
+                
+                                <!-- Job Type Section -->
+                                <div class="single-listing mb-4">
+                                    <h5 class="text-muted mb-3"><i class="fas fa-clock mr-2"></i>Job Type</h5>
+                                    @foreach(['full_time', 'part_time', 'remote', 'contract', 'temporary', 'training', 'Fresh-graduate'] as $type)
                                         <label class="d-block">
-                                            <input type="checkbox" class="mr-2" wire:model="experience_years" value="{{ $type }}"> {{ $type }} years
+                                            <input type="checkbox" class="mr-2" wire:model="job_types" value="{{ $type }}"> {{ $type }}
                                         </label>
                                     @endforeach
-                                    </div>
-                                    <div class="single-listing">
-                                        <h5 class="text-muted mb-3"><i class="fas fa-dollar-sign mr-2"></i>Salary Range</h5>
-                                        <div class="d-flex align-items-center mt-3">
-                                            <span class="mr-2">From:</span> 
-                                            <input type="number" wire:model.debounce.500ms="salaryFrom" id="salary-from" class="form-control custom-width mr-2" />
-                                            <span class="mr-2">To:</span> 
-                                            <input type="number" wire:model.debounce.500ms="salaryTo" id="salary-to" class="form-control custom-width" />
-                                        </div>
-                                    </div>                                    
-                                    
-                                    <button type="submit" class="btn btn-primary mt-2  w-100">
-                                        <i class="fas fa-search"></i> Search
-                                    </button>
-                                
                                 </div>
-                                <!-- End Sidebar -->
+                
+                                <!-- Job Location Section -->
+                                <div class="single-listing mb-4">
+                                    <h5 class="text-muted mb-3"><i class="fas fa-map-marker-alt mr-2"></i>Job Location</h5>
+                                    <select class="form-control" wire:model="company_location">
+                                        <option value="" selected>Anywhere</option>
+                                        <!-- Add more locations as needed -->
+                                        <option value="usa">United States</option>
+                                        <option value="canada">Canada</option>
+                                        <option value="egypt">Egypt</option>
+                                        <option value="germany">Germany</option>
+                                        <option value="france">France</option>
+                                        <option value="japan">Japan</option>
+                                        <option value="australia">Australia</option>
+                                        <option value="switzerland">Switzerland</option>
+                                        <option value="singapore">Singapore</option>
+                                        <option value="netherlands">Netherlands</option>
+                                        <option value="sweden">Sweden</option>
+                                        <option value="norway">Norway</option>
+                                        <option value="finland">Finland</option>
+                                        <option value="denmark">Denmark</option>
+                                        <option value="south_korea">South Korea</option>
+                                        <option value="hong_kong">Hong Kong</option>
+                                        <option value="new_zealand">New Zealand</option>
+                                        <option value="austria">Austria</option>
+                                        <option value="ireland">Ireland</option>
+                                        <option value="luxembourg">Luxembourg</option>
+                                    </select>
+                                </div>
+                
+                                <!-- Experience Section -->
+                                <div class="single-listing mb-4">
+                                    <h5 class="text-muted mb-3"><i class="fas fa-briefcase mr-2"></i>Experience</h5>
+                                    @foreach(['0-1', '1-3', '3-5', '5-10', '10+'] as $type)
+                                        <label class="d-block">
+                                            <input type="checkbox" class="mr-2" wire:model.debounce.500ms="experience_years" value="{{ $type }}"> {{ $type }} years
+                                        </label>
+                                    @endforeach
+                                </div>
+                                <!-- Salary Range Section -->
+                                <div class="single-listing">
+                                    <h5 class="text-muted mb-3"><i class="fas fa-dollar-sign mr-2"></i>Salary Range</h5>
+                                    <div class="d-flex align-items-center mt-3">
+                                        <span class="mr-2">From:</span>
+                                        <input type="number" wire:model.debounce.500ms="salaryFrom" id="salary-from" class="form-control custom-width mr-2" />
+                                        <span class="mr-2">To:</span>
+                                        <input type="number" wire:model.debounce.500ms="salaryTo" id="salary-to" class="form-control custom-width" />
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary mt-2 w-100">
+                                    <i class="fas fa-search"></i> Search
+                                </button>
                             </div>
                         </form>
-                        
-                        <!-- Job Category Listing End -->
                     </div>
                 </div>
+                
                 <div class="col-lg-9">
                     <div class="recent_joblist_wrap">
                         <div class="recent_joblist white-bg ">

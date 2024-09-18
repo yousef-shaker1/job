@@ -91,40 +91,31 @@ jobs
 @endsection
 
 @section('js')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slicknav/1.0.10/jquery.slicknav.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var salarySlider = document.getElementById('salary-range-slider');
-    
-        noUiSlider.create(salarySlider, {
-            start: [0, 1000], // القيم الافتراضية
-            connect: true,
-            range: {
-                'min': 0,
-                'max': 10000
-            },
-            tooltips: [true, true],
-            format: {
-                to: function (value) {
-                    return Math.round(value);
-                },
-                from: function (value) {
-                    return Number(value);
-                }
-            }
-        });
-    
-        salarySlider.noUiSlider.on('update', function (values, handle) {
-            // تحديث القيم في حقول الإدخال
-            document.getElementById('salary-from').value = values[0];
-            document.getElementById('salary-to').value = values[1];
-    
-            // إرسال القيم إلى Livewire
-            Livewire.emit('salaryRangeUpdated', values[0], values[1]);
+    $(document).ready(function() {
+        // تفعيل slicknav
+        $('.menu').slicknav();
+
+        // معالجة أي أخطاء تتعلق بـ slicknav أو validate
+        // تأكد من وجود العنصر قبل محاولة تعديل خصائصه
+        if ($('#someElement').length) {
+            // القيام بعمليات مع العنصر
+        }
+
+        // التعامل مع أحداث Livewire
+        document.addEventListener('livewire:load', function () {
+            Livewire.on('refreshForm', () => {
+                // إعادة تعيين النموذج أو تحديثه هنا
+            });
         });
     });
-    </script>
+</script>
+
 @endsection

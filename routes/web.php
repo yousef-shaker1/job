@@ -75,8 +75,10 @@ Route::middleware(['check_admin'])->group(function () {
     Route::get('/user_index', [AdminController::class, 'user_index'])->name('user_index');
     Route::get('/hr_index', [AdminController::class, 'hr_index'])->name('hr_index');
     Route::get('/blog_index', [AdminController::class, 'blog_index'])->name('blog_index');
+    Route::get('/show_comment/{id}', [AdminController::class, 'show_comment'])->name('show_comment');
     Route::get('/Customer_Messages', [AdminController::class, 'Customer_Messages_index'])->name('Customer_Messages_index');
     Route::delete('/Customer_Message/destroy/{id}', [AdminController::class, 'delete'])->name('Customer_Message.destroy');
+    Route::delete('/comment/destroy/{id}', [AdminController::class, 'delete_comment'])->name('comment.destroy');
 });
 
 

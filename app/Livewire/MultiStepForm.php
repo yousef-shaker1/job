@@ -269,17 +269,17 @@ class MultiStepForm extends Component
                 'project_name' => 'nullable|string|max:100',
                 'project_description' => 'nullable|string|max:500',
                 'skills_project' => 'nullable|string|max:355',
-                'project_url' => 'nullable|integer',
+                'project_url' => 'nullable',
                 //project2
                 'project_name2' => 'nullable|string|max:100',
                 'project_description2' => 'nullable|string|max:500',
                 'skills_project2' => 'nullable|string|max:355',
-                'project_url2' => 'nullable|integer',
+                'project_url2' => 'nullable',
                 //project3
                 'project_name3' => 'nullable|string|max:100',
                 'project_description3' => 'nullable|string|max:500',
                 'skills_project3' => 'nullable|string|max:355',
-                'project_url3' => 'nullable|integer',
+                'project_url3' => 'nullable',
             ]);
         } elseif ($this->step == 4) {
             $this->validate([

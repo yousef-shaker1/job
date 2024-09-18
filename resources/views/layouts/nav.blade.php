@@ -78,12 +78,23 @@
                                         
                                     @elseif(Auth::user()->UserProfile)
                                     <div class="dropdown">
+                                        @if(Auth::user()->UserProfile->userPersonal->img)
                                         <img id="imgPreview" src="{{ asset('storage/' . Auth::user()->UserProfile->userPersonal->img) }}" alt="Image preview" class="img-thumbnail" data-toggle="dropdown">
+                                        @else
+                                        <img id="imgPreview" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image preview" class="img-thumbnail" data-toggle="dropdown">
+                                        @endif
                                         <div class="dropdown-menu">
                                             <div class="dropdown-header">
+                                                @if(Auth::user()->UserProfile->userPersonal->img)
                                                 <a href="{{ asset('storage/' . Auth::user()->UserProfile->userPersonal->img) }}">
                                                     <img src="{{ asset('storage/' . Auth::user()->UserProfile->userPersonal->img) }}" alt="Image preview" class="img-thumbnail-large">
                                                 </a>
+                                                @else
+                                                <a href="https://bootdey.com/img/Content/avatar/avatar7.png">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image preview" class="img-thumbnail-large">
+                                                </a>  
+
+                                                @endif
                                                 <div class="user-info">
                                                     <p class="name">{{ Auth::user()->UserProfile->userPersonal->first_name }} {{ Auth::user()->UserProfile->userPersonal->middle_name }} {{ Auth::user()->UserProfile->userPersonal->last_name }}</p>
                                                     <p class="email">{{ Auth::user()->UserProfile->user->email }}</p>

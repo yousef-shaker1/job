@@ -369,6 +369,7 @@ class EditUserProfile extends Component
         $data = [
             'company_name1' => $this->company_name1,
             'job_title1' => $this->job_title1,
+            'job_description1' => $this->job_description1,
             'start_date_month1' => $this->start_date_month1,
             'start_date_year1' => $this->start_date_year1,
         ];
@@ -392,7 +393,7 @@ class EditUserProfile extends Component
     public function save_expertise2(){
         $this->work_expertise_data2();
         $user = UserProfile::where('user_id',Auth::user()->id)->first();
-        $datee = [
+        $date = [
             'company_name2' => $this->company_name2,
             'job_title2' => $this->job_title2,
             'job_description2' => $this->job_description2,
@@ -401,7 +402,7 @@ class EditUserProfile extends Component
             'end_date_month2' => $this->end_date_month2,
             'end_date_year2' => $this->end_date_year2,
         ];
-        UserWorkExperience2::findorfail($user->user_work_experience2_id)->update($datee);
+        UserWorkExperience2::findorfail($user->user_work_experience2_id)->update($date);
         session()->flash('message2', 'update work expertise success');
     }
     public function work_expertise_data3(){

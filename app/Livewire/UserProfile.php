@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+// use App\Models\User;
 use Livewire\Component;
 use App\Models\UserProfile as user;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,6 @@ class UserProfile extends Component
             // إذا كان المستخدم مسجل دخول، استرجاع بيانات المستخدم الحالي
             $this->id = $id;
             $this->user = user::where('user_id', $id)->first();
-            // dd($id);
         }
     }
 

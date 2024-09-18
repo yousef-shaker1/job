@@ -16,7 +16,7 @@ class JobsAll extends Component
     protected $paginationTheme = 'bootstrap';
     public $section_id;
     public $job_types = [];
-    public $experience_years = [];
+    public $experience_years = []; 
     public $company_location = '';
     public $sections = [];
     public $salaryFrom;
@@ -42,19 +42,7 @@ class JobsAll extends Component
     {
         $this->render();
     }
-    public function addLove($jobId){
-        if(Auth::user() && $jobId){
-            love_job::create([
-                'user_id' => Auth::user()->id,
-                'job_id' => $jobId,
-            ]);
-        }
-    }
-    public function delLove($jobId){
-        if(Auth::user() && $jobId){
-            love_job::where('user_id', Auth::user()->id)->where('job_id', $jobId)->delete();
-        }
-    }
+
 
     public function render()
     {

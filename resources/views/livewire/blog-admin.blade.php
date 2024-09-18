@@ -37,6 +37,7 @@
                                     <th class="border-bottom-0">img</th>
                                     <th class="border-bottom-0">title</th>
                                     <th class="border-bottom-0">body</th>
+                                    <th class="border-bottom-0">comment</th>
                                     <th class="border-bottom-0">Operations</th>
                                 </tr>
                             </thead>
@@ -51,6 +52,7 @@
                                         </td>
                                         <td>{{ $blog->title }}</td>
                                         <td>{{ $blog->body }}</td>
+                                        <td><a href="{{ route('show_comment', $blog->id) }}">show coment</a></td>
                                         <td>
                                             <div style="display: flex; gap: 5px;">
                                                 <button type="button" data-bs-toggle="modal" data-bs-target="#updateBlogModal" wire:click="editBlog({{ $blog->id }})" class="btn btn-info" style="flex: 1; height: 40px;">

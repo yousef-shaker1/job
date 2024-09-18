@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\contact;
+use App\Models\Position;
 use App\Models\Question;
 use App\Models\HrAccount;
 use App\Models\UserProfile;
+use App\Models\comment_blog;
 use Illuminate\Http\Request;
 use App\Models\QuestionOption;
+use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 class AdminController extends Controller
 {
@@ -67,4 +70,19 @@ class AdminController extends Controller
         session()->flash('delete', 'delete message success');
         return redirect()->back();
     }
+    
+    public function show_comment($id){
+        $comments = comment_blog::with('user')->where('blog_id', $id)->paginate(6);
+        if (!$comments) {
+            // يمكنك هنا إضافة منطق عرض رسالة معينة في الواجهة إذا لم تكن هناك تعليقات
+            return view('admin.show_comment', ['comments' => [], 'message' => 'لا توجد تعليقات حالياً.']);
+        }
+        return view('admin.show_comment',compact('comments'));
+    }
+    
+        public function delete_comment(Request $request,$id){
+            comment_blog::find($request->id)->delete();
+            session()->flash('delete', 'delete comment success');
+            return redirect()->back();
+        }
 }

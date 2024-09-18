@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Position;
+use App\Models\QuestionOption;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -22,5 +23,9 @@ class Question extends Model
     public function answers()
 {
     return $this->hasMany(answer::class);
+}
+
+public function options(){
+    return $this->belongsTo(QuestionOption::class);
 }
 }

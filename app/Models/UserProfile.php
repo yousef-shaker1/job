@@ -40,7 +40,6 @@ class UserProfile extends Model
         return $this->belongsTo(UserEducationInformation::class);
     }
 
-
     public function UserSkill()
     {
         return $this->belongsTo(UserSkill::class);
