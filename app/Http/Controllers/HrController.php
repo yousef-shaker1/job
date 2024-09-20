@@ -57,7 +57,6 @@ class HrController extends Controller
             return "Job not found.";
         }
     
-        // تمرير البيانات إلى الـ view
         return view('hr.show_request', compact('job'));
     }
     

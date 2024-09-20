@@ -43,9 +43,9 @@ class CreateJob extends Component
     public function mount()
     {
         $this->hr = HrAccount::where('user_id', Auth::user()->id)->first();
-        $this->questions = ['']; // بدءًا بسؤال فارغ
-        $this->question_types = ['text']; // تحديد النوع الافتراضي كسؤال نصي
-        $this->options = [[]]; // بدءًا بخيارات فارغة
+        $this->questions = ['']; 
+        $this->question_types = ['text'];
+        $this->options = [[]]; 
     }
     
 
@@ -67,12 +67,10 @@ class CreateJob extends Component
         $section_name = null;
     
         if (is_numeric($this->section_id)) {
-            // محاولة العثور على الـ Section بالـ ID المحدد
             $section_name = Section::find($this->section_id);
                 $this->section = $section_name;
         }
     
-        // تمرير جميع المتغيرات اللازمة إلى العرض
         return view('livewire.create-job', compact('sections', 'section_name'));
     }
 
@@ -114,7 +112,6 @@ class CreateJob extends Component
                     'question_type' => $this->question_types[$index],
                 ]);
 
-                // إذا كان السؤال من نوع الاختيار من متعدد، يمكن إضافة خيارات هنا
                 if ($this->question_types[$index] === 'multiple_choice') {
                     foreach ($this->options[$index] as $option_text) {
                         QuestionOption::create([

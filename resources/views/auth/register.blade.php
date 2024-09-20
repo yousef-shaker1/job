@@ -57,15 +57,6 @@
                 <div class="card shadow-lg">
                     <div class="card-body p-4">
                         <h3 class="card-title text-center mb-4">Register</h3>
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        {{ $error }}
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 

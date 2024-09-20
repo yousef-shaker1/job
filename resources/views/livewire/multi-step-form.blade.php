@@ -402,7 +402,7 @@
                                 style="padding: 5px; width: 60px; height: 35px;">
                                 <i class="fas fa-trash-alt"></i> Delete
                             </button>
-                            @if ($showJobForm3)
+                            @if (!$showJobForm3)
                             <button wire:click='add_job3' type="button" class="btn btn-primary"
                                 style="padding: 2px; width: 250px; height: 40px;">
                                 + Add Another Experience

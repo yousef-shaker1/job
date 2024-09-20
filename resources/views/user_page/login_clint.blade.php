@@ -6,8 +6,6 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.9.0/tagify.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
-
-  
   <link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/login_clint.css')}}">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">

@@ -76,7 +76,11 @@ single-blog
                 @endphp
                 @if($userProfile)
                     <div class="thumb">
+                        @if($userProfile->userPersonal->img)
                         <img src="{{ Storage::url($userProfile->userPersonal->img) }}" alt="">
+                        @else
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image preview" data-toggle="dropdown">
+                        @endif
                     </div>
                 @else
                     <div class="thumb">

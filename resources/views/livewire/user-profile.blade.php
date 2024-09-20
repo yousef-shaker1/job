@@ -14,11 +14,14 @@
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center position-relative">
                                 <!-- Icon for editing -->
+                                @if (Auth::user()->id == $user->user->id)
+                                    
                                 <a href="{{ route('edit_profile_user') }}" class="edit-icon position-absolute">
                                     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                         <path d="M3 17.25V21h3.75L17.708 9.992l-3.75-3.75L3 17.25zM20.708 7.292a1 1 0 0 0 0-1.416l-1.58-1.58a1 1 0 0 0-1.416 0L15.5 6.844l3.75 3.75 1.458-1.458z"></path>
                                     </svg>
                                 </a>
+                                @endif
                                 @if (!empty($user->userPersonal->img))
                                     <a href="{{ asset('storage/' . $user->userPersonal->img) }}">
                                         <img src="{{ asset('storage/' . $user->userPersonal->img) }}" alt="User" class="rounded-circle" width="150">

@@ -27,7 +27,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                     <label for="experience_years">experience_years</label>
-                    <select id="experience_years" name="experience_years" class="form-control mr-2"
+                    <select id ="experience_years" name="experience_years" class="form-control mr-2"
                         wire:model="experience_years">
                         <option value="" selected >Choose Section</option>
                         @foreach ($experienceOptions as $key => $value)
@@ -39,7 +39,7 @@
                     @enderror
                 </div>
                 </div>
-
+ 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="company_about">Company About</label>
@@ -92,7 +92,7 @@
                     <label for="employees_number">How many employees should be hired?</label>
                     <select id="employees_number" name="employees_number" class="form-control mr-2"
                         wire:model="employees_number">
-                        <option value="" selected disabled>Select number of employees</option>
+                        <option value="" selected>Select number of employees</option>
                         @for ($i = 1; $i <= 9; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
@@ -243,11 +243,11 @@
 <div class="form-container">
     <h2>Step 2: Job Form</h2>
     @if ($url_radio !== 'yes')
-    @if (session()->has('error'))
-                <div class="alert alert-success">
-                    {{ session('error') }}
-                </div>
-            @endif
+        @if (session()->has('error'))
+            <div class="alert alert-success">
+                {{ session('error') }}
+            </div>
+        @endif
         <form wire:submit.prevent="goToNextStep" class="p-4 bg-white rounded shadow-sm">
             @csrf
             <div id="questions-container">
@@ -271,6 +271,7 @@
                                         </div>
                                     </div>
                                 @endforeach
+
                                 <button wire:click.prevent="addOption({{ $index }})" class="btn btn-sm btn-info">Add Option</button>
                             </div>
                         @endif
@@ -335,19 +336,18 @@
             </div>
             <div class="card-body">
                 @foreach($questions as $index => $question)
-                <div class="question-summary mb-3">
-                    <p><strong>Question:</strong> {{ $question }}</p>
-                    @if ($question_types[$index] === 'multiple_choice')
-                        <p><strong>Options:</strong></p>
-                        <ul>
-                            @foreach($options[$index] as $option)
-                                <li>{{ $option }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </div>
-            @endforeach
-                
+                    <div class="question-summary mb-3">
+                        <p><strong>Question:</strong> {{ $question }}</p>
+                        @if ($question_types[$index] === 'multiple_choice')
+                            <p><strong>Options:</strong></p>
+                            <ul>
+                                @foreach($options[$index] as $option)
+                                    <li>{{ $option }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
+                @endforeach
             </div>
             @endif
         </div>  <form wire:submit.prevent="save">

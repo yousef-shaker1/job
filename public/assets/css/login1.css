@@ -1,0 +1,59 @@
+.login-option {
+  display: flex;
+  justify-content: center; /* لضبط الزرارين في الوسط */
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.login-option a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px; /* عرض أكبر ليتناسب مع النص الكامل */
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  gap: 10px; /* مسافة بين الأيقونة والنص */
+}
+
+.btn-job-seeker {
+  background-color: #28a745;
+}
+
+.btn-job-seeker:hover {
+  background-color: #218838;
+}
+
+.btn-employer {
+  background-color: #007bff;
+}
+
+.btn-employer:hover {
+  background-color: #0056b3;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.login-option h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.container {
+  text-align: center;
+}
+
+.btn img {
+  width: 24px; /* حجم الأيقونة */
+  height: 24px; /* حجم الأيقونة */
+}

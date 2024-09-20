@@ -114,7 +114,6 @@
                                     @else
                                     <a class="btn btn-success mr-2" href="{{ route('login_user') }}">create profile</a>
                                     @endif
-                                    
                                 @else
                                 <div class="container mt-3">
                                     <div class="button-group">

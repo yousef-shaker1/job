@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="container mt-5">
-    <h2 class="mb-4 text-center">Requests for Job: {{ $job->title }}</h2> <!-- عرض عنوان الوظيفة -->
+    <h2 class="mb-4 text-center">Requests for Job: {{ $job->job_title }}</h2> <!-- عرض عنوان الوظيفة -->
 
     <table class="table table-hover table-bordered">
         <thead class="thead-dark">
@@ -22,7 +22,6 @@
         </thead>
         <tbody>
             @php
-                $previousUserId = null;
                 $userAnswers = collect();
                 foreach ($job->questions as $question) {
                     foreach ($question->answers as $answer) {
@@ -39,7 +38,6 @@
                 @foreach ($answers as $index => $answer)
                     <tr>
                         @if ($index === 0)
-                            {{-- <td rowspan="{{ $answers->count() }}">{{ $user->name }}</td> <!-- اسم العميل --> --}}
                             <td rowspan="{{ $answers->count() }}"> <a href='{{ route('view_profile_user', $user->id) }}'>{{ $user->name }}</a></td>
                         @endif
                         <td>{{ $answer->question->question_text }}</td> <!-- نص السؤال -->
