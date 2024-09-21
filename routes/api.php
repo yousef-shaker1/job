@@ -88,5 +88,6 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/job/{section_id}/', [JobsController::class, 'search_job_section']);
     
     Route::get('/jobs/hr/{id}', [JobsController::class, 'jobs_hr']);
+    Route::get('/job', [JobsController::class, 'filterJobs']);
 });
 

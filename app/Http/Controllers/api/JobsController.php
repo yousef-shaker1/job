@@ -105,5 +105,38 @@ class JobsController extends Controller
         return $this->apiResponse($job, 'ok', 200);
     }
 
+    public function filterJobs(Request $request){
+        $query = Position::query()
+            ->join('hr_accounts', 'positions.hr_id', '=', 'hr_accounts.id')
+            ->select('positions.*', 'hr_accounts.company_location')
+            ->where('positions.is_expired', 0);
+
+        if ($request->has('section_id')) {
+            $query->where('positions.section_id', $request->section_id);
+        }
+
+        // // تصفية بناءً على الموقع
+        if ($request->has('company_location')) {
+            $query->where('hr_accounts.company_location', 'LIKE', '%' . $request->company_location . '%');
+        }
+
+        if ($request->has('salaryFrom') && $request->has('salaryTo')) {
+            $query->whereRaw('CAST(SUBSTRING(positions.salary, 1, LENGTH(salary) - 3) AS UNSIGNED) BETWEEN ? AND ?', [$request->salaryFrom, $request->salaryTo]);
+        }
+    
+        if ($request->has('job_types')) {
+            $query->where('positions.employment_type', $request->job_types);
+        }
+
+        if ($request->has('experience_years')) {
+            $query->where('positions.experience_years', $request->experience_years);
+        }
+    
+        // $jobs = $query->get();
+        $jobs = JobShow_allResource::collection($query->get());
+        return $this->apiResponse($jobs, 'ok', 200);
+        
+    }
+
 
 }
