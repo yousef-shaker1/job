@@ -30,7 +30,7 @@ Featured job
           </div>
       </div>
   </div>
-<livewire:Featured_job>
+<livewire:featured-job>
 @endsection
 
 @section('js')

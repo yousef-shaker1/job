@@ -21,7 +21,9 @@
                                       <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                           <ul class="submenu">
                                               <li><a href="{{ route('internship_page') }}">Internships</a></li>
+                                              @auth
                                               <li><a href="{{ route('Featured_job_page') }}">Featured job</a></li>
+                                              @endauth
                                               <li><a href="{{ route('about_page') }}">about</a></li>
                                               <li><a href="{{ route('contact_page') }}">Contact Us</a></li>
                                             </ul>
