@@ -10,7 +10,6 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserPageController;
-use App\Http\Controllers\UserPageCeontroller;
 Route::get('/', [UserPageController::class, 'welcome'])->name('home');
  
 Route::middleware('auth')->group(function () {
