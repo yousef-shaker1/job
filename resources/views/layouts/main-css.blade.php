@@ -1,7 +1,6 @@
   <!-- <link rel="manifest" href="site.webmanifest"> -->
   <link rel="shortcut icon" type="image/x-icon" href="{{URL::asset('assets/img/favicon.png')}}">
   <!-- Place favicon.ico in the root directory -->
-  
   <!-- CSS here -->
   <link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/owl.carousel.min.css')}}">

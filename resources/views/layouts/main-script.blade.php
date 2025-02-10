@@ -66,11 +66,14 @@
 <!-- jQuery -->
 <script src="{{URL::asset('assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
 
+<!-- Popper.js -->
+<script src="{{URL::asset('assets/js/popper.min.js')}}"></script>
+
 <!-- Bootstrap -->
 <script src="{{URL::asset('assets/js/bootstrap.min.js')}}"></script>
-<script src="{{URL::asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
 
 <!-- jQuery Plugins -->
+<script src="{{URL::asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
 <script src="{{URL::asset('assets/js/owl.carousel.min.js')}}"></script>
 <script src="{{URL::asset('assets/js/isotope.pkgd.min.js')}}"></script>
 <script src="{{URL::asset('assets/js/jquery.counterup.min.js')}}"></script>
@@ -89,6 +92,5 @@
 <!-- Custom Scripts -->
 <script src="{{URL::asset('assets/js/contact.js')}}"></script>
 <script src="{{URL::asset('assets/js/main.js')}}"></script>
-
 @livewireScripts
 @yield('js')

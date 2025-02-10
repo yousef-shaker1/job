@@ -5,6 +5,7 @@ home
 @endsection
 
 @section('css')
+
 <style>
     .thumb img{
         width: 79px;

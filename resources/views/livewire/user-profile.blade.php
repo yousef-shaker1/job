@@ -383,9 +383,9 @@
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     @if ($user->UserSkill->cv)
-                                        <a href="{{ asset('storage/' . $user->UserSkill->cv) }}" target="_blank">
-                                            show CV
-                                        </a>
+                                    <a href="{{ env('APP_URL') . '/storage/' . $user->UserSkill->cv }}" target="_blank">
+                                        show CV
+                                    </a>
                                     @else
                                         <span>No CV uploaded</span>
                                     @endif

@@ -65,7 +65,7 @@ Internships
       </div>
   </div>
 </div>
-@livewire('internship')
+@livewire('Internship')
 @endsection
 
 @section('js')
