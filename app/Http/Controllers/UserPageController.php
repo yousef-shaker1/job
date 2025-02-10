@@ -63,6 +63,7 @@ class UserPageController extends Controller
     public function login_clint(){
         return view('user_page.login_clint');
     }
+    
     public function view_profile_user($id){
         $check = UserProfile::where('user_id', Auth::user()->id)->exists();
         return view('user_page.view_profile_user', compact('id', 'check'));

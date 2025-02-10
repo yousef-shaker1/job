@@ -25,8 +25,8 @@
     document.addEventListener('DOMContentLoaded', function () {
     var input = document.querySelector("#phone");
     intlTelInput(input, {
-        preferredCountries: ['us', 'gb'], // يمكنك تغيير الدول المفضلة هنا
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // لتحسين التحقق من الرقم
+        preferredCountries: ['us', 'gb'],
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" 
     });
 });
 

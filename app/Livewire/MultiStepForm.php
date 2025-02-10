@@ -89,7 +89,6 @@ class MultiStepForm extends Component
     public function toggleCurrentlyWorking()
     {
         if ($this->currently_working) {
-            // تعيين القيم كفارغة عند تحديد checkbox
             $this->end_date_month1 = null;
             $this->end_date_year1 = null;
         }
@@ -160,14 +159,13 @@ class MultiStepForm extends Component
                 'start_date_year1' => $this->start_date_year1,
             ];
             
-            // تحقق من الشرط وإضافة البيانات بناءً على ذلك
             if (!$this->currently_working) {
                 $data['end_date_month1'] = $this->end_date_month1;
                 $data['end_date_year1'] = $this->end_date_year1;
             } else {
                 $data['currently_working'] = 'Currently working now';
             }
-            // إنشاء السجل
+
             $UserWorkExperience = UserWorkExperience::create($data);
         }
         if($this->showJobForm2){
@@ -254,7 +252,7 @@ class MultiStepForm extends Component
                 'birth_day' => 'required|integer|min:1|max:31',
                 'birth_month' => 'required|integer|min:1|max:12',
                 'birth_year' => 'required|integer|min:1950|max:2008',
-                'gender' => 'required|in:male,female,other',
+                'gender' => 'required|in:male,female',
             ]);
         } elseif ($this->step == 2) {
             $this->validate([

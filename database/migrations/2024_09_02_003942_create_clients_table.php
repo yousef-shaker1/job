@@ -11,7 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {   
-        // أولاً، قم بإنشاء الجداول التي تحتوي على foreign keys
         Schema::create('user_personals', function (Blueprint $table) {
             $table->id();
             $table->string('img')->nullable();
@@ -23,7 +22,7 @@ return new class extends Migration
             $table->string('year_experience')->nullable();
             $table->string('phone');
             $table->date('birth_day');
-            $table->enum('gender', ['male', 'female', 'other']);
+            $table->enum('gender', ['male', 'female']);
             $table->timestamps();
         });
         

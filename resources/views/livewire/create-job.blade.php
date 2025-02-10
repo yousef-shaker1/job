@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label for="job_title">Job Title</label>
                         <input id="job_title" type="text" class="form-control" wire:model="job_title">
-                        @error('job_title')
+                        @error('job_title') 
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>

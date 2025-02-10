@@ -1,7 +1,4 @@
 <div>
-
-
-    <!-- شريط التقدم -->
     <div class="progress mb-4">
         <div class="progress-bar" role="progressbar" style="width: {{ ($step / 7) * 100 }}%;"
             aria-valuenow="{{ $step }}" aria-valuemin="0" aria-valuemax="7">
@@ -121,11 +118,6 @@
                                 <input id="female" type="radio" class="form-check-input" name="gender"
                                     value="female" wire:model="gender">
                                 <label for="female" class="form-check-label">Female</label>
-                            </div>
-                            <div class="form-check">
-                                <input id="other" type="radio" class="form-check-input" name="gender"
-                                    value="other" wire:model="gender">
-                                <label for="other" class="form-check-label">Other</label>
                             </div>
                             <br>
                         </div>

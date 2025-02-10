@@ -1,4 +1,4 @@
-<!-- JS here -->
+{{-- <!-- JS here -->
 <script src="{{URL::asset('assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
 <script src="{{URL::asset('assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
 <script src="{{URL::asset('assets/js/popper.min.js')}}"></script>
@@ -60,5 +60,35 @@
 });
 
 </script>
+@livewireScripts
+@yield('js') --}}
+
+<!-- jQuery -->
+<script src="{{URL::asset('assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+
+<!-- Bootstrap -->
+<script src="{{URL::asset('assets/js/bootstrap.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
+
+<!-- jQuery Plugins -->
+<script src="{{URL::asset('assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/isotope.pkgd.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/jquery.counterup.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/jquery.slicknav.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/jquery.validate.min.js')}}"></script>
+
+<!-- Other Libraries -->
+<script src="{{URL::asset('assets/js/wow.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/nice-select.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/gijgo.min.js')}}"></script>
+
+<!-- Livewire -->
+<script src="//cdn.jsdelivr.net/npm/livewire@2.3.4/dist/livewire.js"></script>
+
+<!-- Custom Scripts -->
+<script src="{{URL::asset('assets/js/contact.js')}}"></script>
+<script src="{{URL::asset('assets/js/main.js')}}"></script>
+
 @livewireScripts
 @yield('js')
