@@ -10,7 +10,7 @@ jobs:
         with:
           command: |
             cd htdocs/job_board
-            git pull https://github.com/yousef-shaker1/job.git
+            git pull https://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@github.com/yousef-shaker1/job.git
             /opt/cpanel/ea-php81/root/usr/bin/php artisan migrate
             /opt/cpanel/ea-php81/root/usr/bin/php artisan optimize:clear
 
